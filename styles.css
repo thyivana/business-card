@@ -55,6 +55,7 @@ a {
 
 a:hover {
     color: #3c6e71;
+    cursor: pointer;
 }
 
 /* 📱 Tablet Breakpoint (min 480px - max 799px) */
