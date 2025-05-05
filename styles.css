@@ -48,7 +48,7 @@ body {
 
 /* 🔗 Link Styling */
 a {
-    text-decoration: none;
+    text-decoration: underline;
     color: black;
     transition: color 0.3s ease;
 }
