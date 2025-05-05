@@ -1,54 +1,96 @@
-body {
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 20px;
-    /*
-    Challenge:
-    Find a web safe font you like, and add it 
-    to your card.
-    */
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
-.avatar {
-    width: 150px;
-    border-radius:20px;
-}
-
 .card {
-    width: 500px;
+    width: 100%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 15px;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    background: #3c6e71;
+    background: #f28482;
     color: #2b2839;
-    border-bottom: 15px solid #f28482;
-    border-radius: 30px;
+    border-bottom: 10px solid #3c6e71;
+    border-left: 5px solid #3c6e71;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* 🔥 Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ✨ Avatar hover animation */
+.avatar {
+    width: 120px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.avatar:hover {
+    transform: scale(1.05) rotate(1deg);
+}
+
+/* 📇 Contact section */
 .contact {
-    text-align: left;
-}
-    
-        
-    /*
-    Challenge:
-    Find a color palette you like on Coolors.co
-    and use it in your business card.
-     */
+    text-align: center;
 }
 
-.border-blue {
-    border: 1px dotted blue;
+.contact-details {
+    margin: 5px 0;
 }
 
-/*
-Stretch goals:
-Find other ways you can personalize 
-the design of your business card, e.g.:
-- change the border(s)
-- add border radius
-- shuffle the layout
-- shadows        🤯
-- hover effects  🤯🤯
-- animations     🤯🤯🤯
-*/
+/* 🖇️ GitHub link hover effect */
+#github-link {
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
 
+#github-link:hover {
+    color: pink;
+}
+
+/* 📱 Tablet and up (min-width: 500px) */
+@media (min-width: 500px) {
+    .card {
+        min-width: 500px;
+        max-width: 799px;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 20px;
+        text-align: left;
+        border-bottom: 15px solid #3c6e71;
+        border-left: 10px solid #3c6e71;
+        border-radius: 30px;
+    }
+
+    .contact {
+        text-align: left;
+    }
+
+    .avatar {
+        margin-bottom: 0;
+    }
+}
+
+/* 🖥️ Large screens (max-width: 1200px) */
+@media (min-width: 800px) and (max-width: 1200px) {
+    .card {
+        max-width: 1000px;
+        gap: 40px;
+        padding: 30px;
+        background: linear-gradient(135deg, #f28482, #f6bd60);
+    }
+
+    .avatar {
+        width: 150px;
+    }
+}
